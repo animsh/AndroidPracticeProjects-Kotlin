@@ -1,4 +1,4 @@
-package com.animsh.shoppinglist
+package com.animsh.shoppinglist.data.db.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

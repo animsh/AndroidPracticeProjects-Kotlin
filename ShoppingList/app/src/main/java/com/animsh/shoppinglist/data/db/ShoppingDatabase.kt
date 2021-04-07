@@ -1,9 +1,10 @@
-package com.animsh.shoppinglist
+package com.animsh.shoppinglist.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.animsh.shoppinglist.data.db.entities.ShoppingItems
 
 /**
  * Created by animsh on 4/6/2021.

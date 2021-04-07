@@ -1,7 +1,8 @@
-package com.animsh.shoppinglist
+package com.animsh.shoppinglist.data.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.animsh.shoppinglist.data.db.entities.ShoppingItems
 
 /**
  * Created by animsh on 4/6/2021.
