@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">E-commerceTest</string>
+    <string name="login">Login</string>
+    <string name="login_2">Experience the all new App!</string>
+    <string name="email_id">E-mail ID</string>
+    <string name="password">Password</string>
+    <string name="use_mobile_number">Use Mobile Number</string>
+    <string name="login_1">Log in to get started</string>
+    <string name="register">Register</string>
+    <string name="sign_up_1">Register in to get started</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="wait_we_are_working_on_your_request">Wait we are working on yor request!</string>
+    <string name="products">Products</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="like">Like</string>
+    <string name="share">share</string>
+</resources>
