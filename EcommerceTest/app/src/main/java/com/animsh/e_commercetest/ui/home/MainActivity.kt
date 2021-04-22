@@ -10,6 +10,7 @@ import com.animsh.e_commercetest.R
 import com.animsh.e_commercetest.databinding.ActivityMainBinding
 import com.animsh.e_commercetest.entities.Product
 import com.animsh.e_commercetest.ui.auth.AuthActivity
+import com.animsh.e_commercetest.utils.LoadingDialog
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private val TAG = "TAGTAGTAG"
     private val mAdapter by lazy { ProductsAdapter(this) }
     private var products: MutableList<Product> = mutableListOf()
+    private lateinit var loadingDialog: LoadingDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
+            loadingDialog = LoadingDialog(this@MainActivity)
+            loadingDialog.showLoadingDialog()
             getAllDocs()
             recyclerView.layoutManager =
                 LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, true)
@@ -61,9 +65,11 @@ class MainActivity : AppCompatActivity() {
                     Log.d(TAG, "${document.id} => ${document.data} ${products.size}")
                 }
                 mAdapter.setData(products)
+                loadingDialog.dismissDialog()
             }
             .addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)
+                loadingDialog.dismissDialog()
             }
     }
 
