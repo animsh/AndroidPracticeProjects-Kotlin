@@ -24,28 +24,40 @@ class MainActivity : AppCompatActivity() {
     private fun clickDataPicker(view: View) {
         val c = Calendar.getInstance()
         val year =
-                c.get(Calendar.YEAR)
+            c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
         val dpd = DatePickerDialog(
-                this,
-                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                    val selectedDate = "$dayOfMonth/${monthOfYear + 1}/$year"
+            this,
+            { view, year, monthOfYear, dayOfMonth ->
+                val selectedDate = "$dayOfMonth/${monthOfYear + 1}/$year"
 
-                    tvSelectedDate.text = selectedDate
-                    val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
-                    val theDate = sdf.parse(selectedDate)
-                    val selectedDateToMinutes = theDate!!.time / 60000
-                    val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
-                    val currentDateToMinutes = currentDate!!.time / 60000
+                tvSelectedDate.text = selectedDate
+                val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
+                val theDate = sdf.parse(selectedDate)
+                val selectedDateToMinutes = theDate!!.time / 60000
+                val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
+                val currentDateToMinutes = currentDate!!.time / 60000
 
-                    val differenceInMinutes = currentDateToMinutes - selectedDateToMinutes
-                    tvSelectedDateInMinutes.text = differenceInMinutes.toString()
-                },
-                year,
-                month,
-                day
+                val differenceInMinutes = currentDateToMinutes - selectedDateToMinutes
+                tvSelectedDateInMinutes.text = differenceInMinutes.toString()
+
+                val differenceInHours = currentDateToMinutes / 60
+                tvSelectedDateInHours.text = differenceInHours.toInt().toString()
+
+                val differenceInDays = differenceInMinutes / 1440
+                tvSelectedDateInDays.text = differenceInDays.toInt().toString()
+
+                val differenceInMonths = differenceInMinutes / 43800
+                tvSelectedDateInMonths.text = differenceInMonths.toInt().toString()
+
+                val differenceInYears = differenceInMinutes / 525600
+                tvSelectedDateInYears.text = differenceInYears.toInt().toString()
+            },
+            year,
+            month,
+            day
         )
         dpd.datePicker.maxDate = Date().time - 86400000
         dpd.show()
