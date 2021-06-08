@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEFAULT AMPLITUDE " />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EFFECT CLICK  " />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EFFECT DOUBLE CLICK  " />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EFFECT HEAVY CLICK  " />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EFFECT TICK  " />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonZero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal" />
+    </LinearLayout>
+</FrameLayout>

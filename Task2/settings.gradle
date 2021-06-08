@@ -1,0 +1,2 @@
+rootProject.name = "AEZMO Task 2"
+include ':app'
